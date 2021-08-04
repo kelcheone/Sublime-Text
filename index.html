@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Sublime Text</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      textarea {
+        border: 1px solid black;
+        width: 98%;
+        height: 400px;
+        margin: 4px;
+        padding: 1em;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", () => {
+        const audio = document.getElementById("audio");
+        let stopTimer;
+
+        document.getElementById("text").addEventListener("input", () => {
+          clearTimeout(stopTimer);
+          audio.play();
+          stopTimer = setTimeout(() => {
+            audio.pause();
+          }, 500);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>
+      <img
+        src="https://cdn.glitch.com/bc39bb8c-0b20-48ad-95ec-5de3bf4ffa50%2Fsublime-logo.jpeg?v=1624569291299"
+        height="50px"
+      />
+      <img
+        src="https://cdn.glitch.com/bc39bb8c-0b20-48ad-95ec-5de3bf4ffa50%2Flogotype.png?v=1624569286067"
+        height="50px"
+      />
+    </h1>
+    <textarea id="text"></textarea>
+    <div style="font-size: x-small">
+      this silly thing was made by
+      <a href="https://twitter.com/blaine/status/1408173942343274498">@blaine</a
+      >, remix it
+      <a href="https://glitch.com/remix/#!/what-i-got">on glitch</a>!
+    </div>
+    <audio
+      id="audio"
+      src="https://cdn.glitch.com/bc39bb8c-0b20-48ad-95ec-5de3bf4ffa50%2Fwhatigot.mp3?v=1624569295786"
+      preload
+    />
+  </body>
+</html>
